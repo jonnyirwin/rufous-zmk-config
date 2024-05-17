@@ -10,6 +10,7 @@
 #define CK 0
 #define NAV 1
 #define SYM 2
+#define FN	3
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 // &lt { quick-tap-ms = <33200>; };
@@ -85,6 +86,11 @@
 				bindings = <&kp LC(A)>;
 			};
 
+			combo_fn {
+				key-positions = <23 25>;
+				bindings = <&mo FN>
+			}
+
 		};
 
     keymap {
@@ -120,5 +126,15 @@
 					                                        &kp LC(BSPC) &kp DEL						 &none		           &trans
             >;
         };
+
+				fn_layer {
+					display-name = "Fn";
+					bindings = <
+						&kp F1	&kp F2	&kp F3	&kp F4	&kp F5		&none &none &none &none &sys_reset
+						&kp F6	&kp F7	&kp F8	&kp F9	&kp F10		&none &none &none &none &bootloader	
+										&kp F11	&kp F12	&kp F13									&none	&none	&none
+																		&none		&none			&none	&none
+					>;
+				};
     };
 };
